@@ -22,3 +22,7 @@ debug
 /win_install.log
 /linux_install.log
 /src/default_excludes.mk
+STM32F407xG/*.o
+STM32F407xG/*.d
+STM32F407xG/libs
+STM32F407xG/modules

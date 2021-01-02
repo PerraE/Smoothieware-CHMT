@@ -15,8 +15,8 @@ default_feed_rate                            60000            # Default rate ( m
 default_seek_rate                            60000            # Default rate ( mm/minute ) for G0 moves
 
 # Arm solution configuration : Cartesian robot. Translates mm positions into stepper positions
-alpha_steps_per_mm                           31.94            # Steps per mm for alpha stepper # 1/8 stepping, 25T?, 1.8deg
-beta_steps_per_mm                            31.94            # Steps per mm for beta stepper
+alpha_steps_per_mm                           31.98            # Steps per mm for alpha stepper # 1/8 stepping, 25T?, 1.8deg
+beta_steps_per_mm                            31.98            # Steps per mm for beta stepper
 gamma_steps_per_mm                           4.4444           # Steps per mm for gamma stepper
 
 # Planner module configuration : Look-ahead and acceleration configuration
@@ -157,7 +157,7 @@ beta_max_travel                              475
 
 # Z
 gamma_min_endstop                            2.13!^           # 
-gamma_max_endstop                            4.2!^            #
+gamma_max_endstop                            nc               #
 gamma_homing_direction                       home_to_min      # if z is parked it will not move (0mm retract)
 gamma_min                                    0                # if its not parked, it will advance until it skips
 gamma_max                                    46               # and spring will return to 0
@@ -233,6 +233,9 @@ switch.dragpin.input_off_command             M817
 switch.dragpin.output_pin                    3.14
 switch.dragpin.output_type                   digital
 
+switch.dragpinstate.enable                   true
+switch.dragpinstate.input_pin                4.2
+
 #switch.rs422en.enable                        true
 #switch.rs422en.output_pin                    2.1
 #switch.rs422en.output_type                   digital
@@ -251,6 +254,12 @@ switch.camsw.input_on_command                M818
 switch.camsw.input_off_command               M819
 switch.camsw.output_pin                      6.10
 switch.camsw.output_type                     digital
+
+switch.buzzer.enable                         true
+switch.buzzer.input_on_command               M820
+switch.buzzer.input_off_command              M821
+switch.buzzer.output_pin                     1.7
+switch.buzzer.output_type                    digital
 
 temperature_control.v1sense.enable           true
 temperature_control.v1sense.thermistor_pin   0.6
